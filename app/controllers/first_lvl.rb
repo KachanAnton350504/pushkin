@@ -13,6 +13,7 @@ class FirstLvl
   end
 
   def search
+    p @question
     words = @question.split(/\s|,| |\.|\?|!|:|;|\(|\)|-|"/)
     words.delete("")
     digit_string = ''
