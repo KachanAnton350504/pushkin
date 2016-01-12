@@ -4,8 +4,8 @@ require 'pry'
 class FirstLevel
   def initialize question
     @question = question
-    @word_digit = JSON.parse(load_file('poems'))
-    @str_name = JSON.parse(load_file('str_name'))
+    @poems = JSON.parse(load_file('poems'))
+    @poems_name = JSON.parse(load_file('poems_name'))
   end
 
   def load_file name
@@ -13,19 +13,19 @@ class FirstLevel
   end
 
   def search
-    words = @question.split(/\s|,| |\.|\?|!|:|;|\(|\)|-|"/)
-    words.delete("")
-    digit_string = ''
-    words.each do |word|
+    qstring_of_poem = @question.split(/\s|,| |\.|\?|!|:|;|\(|\)|-|"/)
+    qstring_of_poem.delete("")
+    id_name_of_poem = ''
+    qstring_of_poem.each do |word|
       unless word == ''
-        digit = @word_digit[word]
-        digit_string = digit_string + digit.to_s + '_'
+        id_word_poem = @poems[word]
+        id_name_of_poem += id_word_poem.to_s + '_'
       end
     end
-    digit_string
+    id_name_of_poem
   end
 
-  def answer digit_string
-    @str_name[digit_string]
+  def answer id_name_of_poem
+    @poems_name[id_name_of_poem]
   end
 end

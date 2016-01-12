@@ -1,7 +1,7 @@
 require 'json'
 require 'pry'
 
-class SecondLvl
+class SecondLevel
   def initialize
     @poems = JSON.parse(load_file('poems'))
     @str_0 = JSON.parse(load_file('str_0'))

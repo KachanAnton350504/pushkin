@@ -12,19 +12,13 @@ class Manage
   def level_manage
     case @level.to_s
     when '1'
-      @first_lvl = FirstLvl.new(@question)
+      @first_lvl = FirstLevel.new(@question)
       digit_string = @first_lvl.search
-      @first_lvl.answer(digit_string)
+      @first_lvl.answer(id_name_of_poem)
     when '2'
-      SecondLvl.new.search(@question)
+      SecondLevel.new.search(@question)
     when '3','4'
-      ThirdLvl.new(@question).search
-    when '5'
-      FifthLvl.new(@question).search
-    when '6','7'
-      SixthLvl.new(@question).search
-    when '8'
-      EighthLvl.new(@question).search
+      ThirdLevel.new(@question).search
     end
   end
 end

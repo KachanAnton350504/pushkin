@@ -1,7 +1,7 @@
 require 'json'
 require 'pry'
 
-class ThirdLvl
+class ThirdLevel
   def initialize question
     @question = question
   end
