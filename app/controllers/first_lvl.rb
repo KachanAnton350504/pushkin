@@ -1,10 +1,10 @@
 require 'json'
 require 'pry'
 
-class FirstLvl
+class FirstLevel
   def initialize question
     @question = question
-    @word_digit = JSON.parse(load_file('word_digit'))
+    @word_digit = JSON.parse(load_file('poems'))
     @str_name = JSON.parse(load_file('str_name'))
   end
 
@@ -16,7 +16,6 @@ class FirstLvl
     words = @question.split(/\s|,| |\.|\?|!|:|;|\(|\)|-|"/)
     words.delete("")
     digit_string = ''
-    #binding.pry
     words.each do |word|
       unless word == ''
         digit = @word_digit[word]
